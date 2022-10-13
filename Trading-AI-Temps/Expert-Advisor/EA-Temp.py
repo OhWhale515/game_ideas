@@ -1,14 +1,13 @@
 # region imports
 import numpy as np
 # endregion
-
-class MeasuredMagentaManatee(QCAlgorithm):
+class MutltidimensinalTransdimensionalSpliiter(QCAlgorithm):
 
     def Initialize(self):
-        self.SetCash(1000)
+        self.SetCash(100000)
 
         self.SetStartDate(2020,9,1)
-        self.SetEndDate(2022,10,1)
+        self.SetEndDate(2022,9,1)
 
         self.symbol = self.AddEquity("SPY", Resolution.Daily).Symbol
 
@@ -27,7 +26,7 @@ class MeasuredMagentaManatee(QCAlgorithm):
 
 
 
-    def OnData(self, data: Slice):
+    def OnData(self, data):
        self.Plot("Data Chart", self.symbol, self.Securities[self.symbol].Close)
 
     def EveryMarketOpen(self):
@@ -66,6 +65,3 @@ class MeasuredMagentaManatee(QCAlgorithm):
                 self.Debug(updateFields.StopPrice) 
 
             self.Plot("Data Chart", "Stop Price", self.stopMarketTicket.Get(OrderField.StopPrice))                  
-
-
-
